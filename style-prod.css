@@ -257,6 +257,5 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
   .s-hero__text { display: flex; flex-direction: column; }
   .s-hero__photo { display: block; order: -1; margin: 0 0 18px; }
   .s-hero__photo img { aspect-ratio: 4 / 3; max-height: 380px; }
-  .s-hero__bg { display: none; }
 }
 /* мобильный первый экран: конец */
