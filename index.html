@@ -222,5 +222,33 @@
 <footer class="s-foot"><p>Шиномонтаж и автомойка · Москва</p><p>Шиномонтаж, балансировка с виброконтролем, правка дисков, автомойка</p><p style="flex-basis:100%">Индивидуальный предприниматель Жарова Ирина Борисовна · ОГРНИП 317774600101790 · ИНН 771576016491</p></footer>
 <nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться</a><a class="s-btn s-btn--ghost" href="tel:+79035449278">Позвонить</a></nav>
 <script src="style.js" defer></script>
+<script data-chip-sync>
+(function () {
+  function sync() {
+    var chips = document.querySelectorAll('.s-chip');
+    for (var k = 0; k < chips.length; k++) {
+      var i = chips[k].querySelector('input');
+      if (i && i.checked) chips[k].classList.add('is-checked'); else chips[k].classList.remove('is-checked');
+    }
+  }
+  document.addEventListener('change', sync);
+  document.addEventListener('click', function () { setTimeout(sync, 0); });
+  if (window.MutationObserver) new MutationObserver(sync).observe(document.body, { childList: true, subtree: true });
+  sync();
+})();
+</script>
+<script data-map-tap>
+(function () {
+  var maps = document.querySelectorAll('.s-map');
+  function off() { for (var i = 0; i < maps.length; i++) maps[i].classList.remove('is-active'); }
+  for (var i = 0; i < maps.length; i++) {
+    (function (m) { m.addEventListener('click', function () { off(); m.classList.add('is-active'); }); })(maps[i]);
+  }
+  document.addEventListener('touchstart', function (e) {
+    var t = e.target; while (t && t !== document) { if (t.classList && t.classList.contains('s-map')) return; t = t.parentNode; }
+    off();
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
