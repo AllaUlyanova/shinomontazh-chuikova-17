@@ -302,3 +302,8 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 .s-light--cont { margin-top: 0; padding-top: 0; }
 .s-light:has(+ .s-light--cont) { padding-bottom: clamp(40px, 5vw, 64px); }
 /* светлые полосы: конец */
+
+/* карта: начало */
+.s-map { margin-top: 16px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--hair); background: var(--c-surface); }
+.s-map iframe { display: block; width: 100%; height: clamp(260px, 42vw, 380px); border: 0; }
+/* карта: конец */
