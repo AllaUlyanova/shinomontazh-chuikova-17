@@ -290,4 +290,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 .s-foot p:nth-child(3) { padding-top: 0; border-top: 0; font-size: .8rem; opacity: .85; margin-top: 4px; }
 @media (max-width: 960px) { .s-hero__bg { display: none; } }
 @media (max-width: 640px) { .s-bar__right { display: none; } .s-bar__brand { font-size: 1rem; overflow: visible; } }
+/* без фона-призрака */
+.s-hero__bg { display: none; }
+@media (min-width: 861px) { .s-photos figure:last-child:nth-child(3n+1) { grid-column: 1 / -1; } .s-photos figure:last-child:nth-child(3n+1) img { aspect-ratio: 2 / 1; } }
 /* подвал: конец */
