@@ -292,5 +292,5 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 @media (max-width: 640px) { .s-bar__right { display: none; } .s-bar__brand { font-size: 1rem; overflow: visible; } }
 /* без фона-призрака */
 .s-hero__bg { display: none; }
-@media (min-width: 861px) { .s-photos figure:last-child:nth-child(3n+1) { grid-column: 1 / -1; } .s-photos figure:last-child:nth-child(3n+1) img { aspect-ratio: 2 / 1; } }
+@media (min-width: 861px) { .s-photos { grid-template-columns: repeat(6, 1fr); } .s-photos figure { grid-column: span 3; } .s-photos figure:nth-child(-n+3) { grid-column: span 2; } .s-photos figure:nth-child(n+4) img { aspect-ratio: 4 / 3; } }
 /* подвал: конец */
