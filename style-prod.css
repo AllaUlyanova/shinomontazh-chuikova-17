@@ -275,3 +275,11 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 .s-stand__fig figcaption { margin-top: 10px; font-size: .84rem; color: var(--c-ink-soft); text-align: center; }
 @media (max-width: 860px) { .s-stand { grid-template-columns: 1fr; } }
 /* станок: конец */
+
+/* подвал: начало */
+.s-foot { width: min(100% - 2 * var(--gut), var(--wrap) - 2 * var(--gut)); max-width: none; margin-inline: auto; padding: 22px 0 40px; row-gap: 14px; align-items: baseline; }
+.s-foot p { margin: 0; }
+.s-foot p:nth-child(2) { text-align: right; }
+.s-foot p:nth-child(3) { padding-top: 14px; border-top: 1px solid var(--hair); font-size: .8rem; }
+@media (max-width: 640px) { .s-foot p:nth-child(2) { text-align: left; } }
+/* подвал: конец */
