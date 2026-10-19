@@ -259,3 +259,19 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
   .s-hero__photo img { aspect-ratio: 4 / 3; max-height: 380px; }
 }
 /* мобильный первый экран: конец */
+
+/* станок: начало */
+.s-stand { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.s-stand__text { display: grid; gap: 18px; justify-items: start; }
+.s-stand__text h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); }
+.s-stand__lead { color: var(--c-ink-soft); max-width: 36em; margin: 0; }
+.s-stand__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.s-stand__list li { position: relative; padding-left: 30px; }
+.s-stand__list li::before { content: ""; position: absolute; left: 0; top: .32em; width: 16px; height: 16px; border-radius: 50%; background: var(--c-accent); }
+.s-stand__text p { margin: 0; }
+.s-stand__fig { margin: 0; border-radius: calc(var(--r) * 1.5); padding: clamp(16px, 3vw, 32px); border: 1px solid var(--hair);
+  background: radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--c-accent) 20%, var(--c-surface)), var(--c-surface) 72%); }
+.s-stand__fig img { display: block; width: 100%; height: auto; max-height: 460px; object-fit: contain; }
+.s-stand__fig figcaption { margin-top: 10px; font-size: .84rem; color: var(--c-ink-soft); text-align: center; }
+@media (max-width: 860px) { .s-stand { grid-template-columns: 1fr; } }
+/* станок: конец */
