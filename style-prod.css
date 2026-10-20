@@ -335,8 +335,8 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 
 
 /* строка шиномонтаж */
-.s-eyebrow { display: block; font: 800 clamp(1.3rem, 2.5vw, 2.1rem)/1.1 var(--f-display); text-transform: none; letter-spacing: 0; margin-bottom: 14px; }
-.s-eyebrow__sub { display: block; margin-top: 6px; font: 600 1rem/1.3 var(--f-text); letter-spacing: .02em; color: var(--c-ink-soft); }
+.s-eyebrow { display: block; font: 800 clamp(1.3rem, 2.5vw, 2.1rem)/1.1 var(--f-display); text-transform: none; letter-spacing: 0; margin-bottom: 28px; }
+.s-eyebrow__sub { display: block; margin-top: 8px; font: 600 1rem/1.3 var(--f-text); letter-spacing: .02em; color: var(--c-ink-soft); }
 /* строка шиномонтаж: конец */
 
 /* старые iPhone: начало */
@@ -399,7 +399,7 @@ html { -webkit-tap-highlight-color: transparent; }
   .s-lead { font-size: 1rem; margin-top: 12px; }
 }
 @media (orientation: landscape) and (max-height: 520px) and (min-width: 780px) {
-  .s-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); gap: 28px; }
+  .s-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); gap: 28px; }
   .s-hero__widget { position: static; }
 }
 
@@ -417,3 +417,31 @@ html { -webkit-tap-highlight-color: transparent; }
   .s-map.is-active::after { display: none; }
 }
 /* адаптив: конец */
+
+/* прайс-листы: начало */
+.s-pricelists { margin-top: clamp(40px, 6vw, 64px); }
+.s-pricelists__title { margin: 0 0 6px; font: 700 1.25rem/1.2 var(--f-display); }
+.s-pricelists__hint { margin: 0 0 18px; color: var(--c-ink-soft); font-size: .92rem; }
+.s-pricelists__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.s-pricelist { display: block; text-decoration: none; cursor: zoom-in; }
+.s-pricelist img { display: block; width: 100%; height: auto; border-radius: var(--r); border: 1px solid var(--hair); background: #3a3d40; }
+.s-pricelist span { display: block; margin-top: 8px; font-size: .88rem; color: var(--c-ink-soft); }
+.s-pricelist:hover img { border-color: var(--c-accent); }
+@media (max-width: 760px) {
+  .s-pricelists__grid { display: flex; gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .s-pricelists__grid li { flex: 0 0 74%; scroll-snap-align: start; }
+}
+html.s-lb-open { overflow: hidden; }
+.s-lb { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 100; overflow: auto; -webkit-overflow-scrolling: touch; background: rgba(0, 0, 0, .94); padding: calc(12px + env(safe-area-inset-top)) 12px calc(12px + env(safe-area-inset-bottom)); }
+.s-lb[hidden] { display: none; }
+.s-lb img { display: block; margin: 0 auto; width: 900px; max-width: none; height: auto; border-radius: 8px; cursor: default; }
+@media (min-width: 900px) { .s-lb img { width: auto; max-width: 100%; max-height: calc(100vh - 24px); } }
+.s-lb__close { position: fixed; top: calc(10px + env(safe-area-inset-top)); right: calc(12px + env(safe-area-inset-right)); width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .92); color: #111; font: 400 2rem/1 var(--f-text); cursor: pointer; }
+/* прайс-листы: конец */
+
+/* строка в одну линию: начало */
+.s-eyebrow { white-space: nowrap; overflow: hidden; font-size: clamp(1rem, 4.4vw, 1.9rem); }
+.s-hero__text, .s-hero__widget { min-width: 0; }
+.s-eyebrow { max-width: 100%; }
+@supports not (overflow-x: clip) { html, body { overflow-x: hidden; } }
+/* строка в одну линию: конец */
